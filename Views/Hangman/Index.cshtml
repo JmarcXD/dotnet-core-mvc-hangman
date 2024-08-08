@@ -2,6 +2,7 @@
 
 
 <h1>Ahorcado</h1>
+<h1 id="message"></h1>
 <div class="container" style="text-align: center;">
     <div class="row">
         @for (int i = 0; i < Model.wordToGuess.Count(); i++)
@@ -33,7 +34,7 @@
 <canvas id="hangman" width="400" height="400"></canvas>
 
 <script>
-    var wordToGuess = @Model.wordToGuess;
+    var wordToGuess = "@Model.wordToGuess";
     var numberHP = 7;
     var letterUsedList = [];
     var numberOfLetterGuessed = 0;
@@ -76,7 +77,6 @@
 
         return letterFound;
     }
-
 
 
     const canvas = document.getElementById('hangman');
@@ -146,5 +146,4 @@
         if (lives < 2) drawLeftLeg();
         if (lives < 1) drawRightLeg();
     }
-
 </script>
